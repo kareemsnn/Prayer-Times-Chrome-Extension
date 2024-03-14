@@ -7,6 +7,11 @@
         "16": "icons.png",
         "48": "icons.png",
         "128": "icons.png"
+    },
+    "action" : {
+        "default_popup": "popup.html",
+        "default_title": "React extension",
+        "default_icon" : "icons.png"
     }
 
 }
