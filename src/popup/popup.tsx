@@ -1,11 +1,11 @@
 import React from 'react';
 import {createRoot} from 'react-dom/client'
-
+import './popup.css'
 
 const test = (
     <div>
     <h1>Hello World</h1>
-    <p>yooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooo</p>
+    <p>yoooooooooooooooooooooooooooooooooooo</p>
     </div>
 )
 

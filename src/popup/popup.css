@@ -1,5 +1,5 @@
 body {
     height : 400px;
-    width: 400px;
-    background-color : red;
+    width: 300px;
+    background-image: url("/src/assets/pic2.JPG");
 }
