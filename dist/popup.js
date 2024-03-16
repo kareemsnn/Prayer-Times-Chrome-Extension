@@ -22,10 +22,10 @@ __webpack_require__.r(__webpack_exports__);
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1___default()((_node_modules_css_loader_dist_runtime_sourceMaps_js__WEBPACK_IMPORTED_MODULE_0___default()));
 // Module
 ___CSS_LOADER_EXPORT___.push([module.id, `body {
-    height : 400px;
-    width: 300px;
-    background-color: rgb(255, 231, 152);
-}`, "",{"version":3,"sources":["webpack://./src/popup/popup.css"],"names":[],"mappings":"AAAA;IACI,cAAc;IACd,YAAY;IACZ,oCAAoC;AACxC","sourcesContent":["body {\r\n    height : 400px;\r\n    width: 300px;\r\n    background-color: rgb(255, 231, 152);\r\n}"],"sourceRoot":""}]);
+    height : 230px;
+    width: 270px;
+    background-color: rgb(253, 240, 123);
+}`, "",{"version":3,"sources":["webpack://./src/popup/popup.css"],"names":[],"mappings":"AAAA;IACI,cAAc;IACd,YAAY;IACZ,oCAAoC;AACxC","sourcesContent":["body {\r\n    height : 230px;\r\n    width: 270px;\r\n    background-color: rgb(253, 240, 123);\r\n}"],"sourceRoot":""}]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -33944,11 +33944,11 @@ __webpack_require__.r(__webpack_exports__);
 
 
 function App() {
-    const [data, setData] = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)('');
+    const [date, setDate] = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)('');
     (0,react__WEBPACK_IMPORTED_MODULE_0__.useEffect)(() => {
         fetch('http://localhost:5000/get-date')
             .then(response => response.json())
-            .then(data => setData(data.date))
+            .then(data => setDate(data.date))
             .catch(error => console.error('Error fetching date:', error));
     }, []);
     const [fajr, setFajr] = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)('');
@@ -33956,16 +33956,56 @@ function App() {
         fetch('http://localhost:5000/fajr')
             .then(response => response.json())
             .then(data => setFajr(data.fajrtime))
-            .catch(error => console.error('Error fetching date:', error));
+            .catch(error => console.error('Error fetching fajr:', error));
+    }, []);
+    const [duhur, setDuhur] = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)('');
+    (0,react__WEBPACK_IMPORTED_MODULE_0__.useEffect)(() => {
+        fetch('http://localhost:5000/duhur')
+            .then(response => response.json())
+            .then(data => setDuhur(data.duhur))
+            .catch(error => console.error('Error fetching duhur:', error));
+    }, []);
+    const [asr, setAsr] = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)('');
+    (0,react__WEBPACK_IMPORTED_MODULE_0__.useEffect)(() => {
+        fetch('http://localhost:5000/asr')
+            .then(response => response.json())
+            .then(data => setAsr(data.asr))
+            .catch(error => console.error('Error fetching asr:', error));
+    }, []);
+    const [maghrib, setMaghrib] = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)('');
+    (0,react__WEBPACK_IMPORTED_MODULE_0__.useEffect)(() => {
+        fetch('http://localhost:5000/maghrib')
+            .then(response => response.json())
+            .then(data => setMaghrib(data.maghrib))
+            .catch(error => console.error('Error fetching maghrib:', error));
+    }, []);
+    const [isha, setIsha] = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)('');
+    (0,react__WEBPACK_IMPORTED_MODULE_0__.useEffect)(() => {
+        fetch('http://localhost:5000/isha')
+            .then(response => response.json())
+            .then(data => setIsha(data.isha))
+            .catch(error => console.error('Error fetching isha:', error));
     }, []);
     return (react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", null,
         react__WEBPACK_IMPORTED_MODULE_0___default().createElement("h1", null, "Prayer Times in Tampa"),
         react__WEBPACK_IMPORTED_MODULE_0___default().createElement("p", null,
             "Current Date: ",
-            data),
+            date),
         react__WEBPACK_IMPORTED_MODULE_0___default().createElement("p", null,
             "Fajr: ",
-            fajr)));
+            fajr),
+        react__WEBPACK_IMPORTED_MODULE_0___default().createElement("p", null,
+            "Duhur: ",
+            duhur),
+        react__WEBPACK_IMPORTED_MODULE_0___default().createElement("p", null,
+            "Asr: ",
+            asr),
+        react__WEBPACK_IMPORTED_MODULE_0___default().createElement("p", null,
+            "Maghrib: ",
+            maghrib),
+        react__WEBPACK_IMPORTED_MODULE_0___default().createElement("p", null,
+            "Isha: ",
+            isha)));
 }
 const container = document.createElement('div');
 document.body.appendChild(container);
