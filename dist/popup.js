@@ -33951,11 +33951,21 @@ function App() {
             .then(data => setData(data.date))
             .catch(error => console.error('Error fetching date:', error));
     }, []);
+    const [fajr, setFajr] = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)('');
+    (0,react__WEBPACK_IMPORTED_MODULE_0__.useEffect)(() => {
+        fetch('http://localhost:5000/fajr')
+            .then(response => response.json())
+            .then(data => setFajr(data.fajrtime))
+            .catch(error => console.error('Error fetching date:', error));
+    }, []);
     return (react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", null,
         react__WEBPACK_IMPORTED_MODULE_0___default().createElement("h1", null, "Prayer Times in Tampa"),
         react__WEBPACK_IMPORTED_MODULE_0___default().createElement("p", null,
             "Current Date: ",
-            data)));
+            data),
+        react__WEBPACK_IMPORTED_MODULE_0___default().createElement("p", null,
+            "Fajr: ",
+            fajr)));
 }
 const container = document.createElement('div');
 document.body.appendChild(container);

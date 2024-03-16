@@ -9,7 +9,7 @@
         "128": "icons.png"
     },
     "action" : {
-        "default_popup": "popup.html",
+        "default_popup": "dist/popup.html",
         "default_title": "React extension",
         "default_icon" : "icons.png"
     }

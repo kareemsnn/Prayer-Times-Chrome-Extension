@@ -12,13 +12,20 @@ function App() {
             .catch(error => console.error('Error fetching date:', error));
     }, []);
 
+    const [fajr, setFajr] = useState('');
+
+    useEffect(() => {
+        fetch('http://localhost:5000/fajr')
+            .then(response => response.json())
+            .then(data => setFajr(data.fajrtime))
+            .catch(error => console.error('Error fetching date:', error));
+    }, []);
+
     return (
         <div>
             <h1>Prayer Times in Tampa</h1>
-            <p>Current Date: {data}
-            
-            
-            </p>
+            <p>Current Date: {data}</p>
+            <p>Fajr: {fajr}</p>
         </div>
     );
 }
